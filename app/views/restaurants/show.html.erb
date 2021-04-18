@@ -6,9 +6,28 @@
 <br>
 <%= link_to "supprimer resto", restaurant_path, method: :delete, data: { confirm: "are you sure?"} %>
 <br>
+<%= link_to "laisser un comm", new_restaurant_review_path(@restaurant) %>
+<br>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li>
+    <%= review.content %>
+    <%= link_to "delete", review, method: :delete, data: { confirm: "are you sure?"} %>
+  </li>
+  <% end %>
+</ul>
+<br>
 <% if  @restaurant.stars == 5 %>
   <%= link_to "retour", top_restaurants_path %>
 <% else %>
   <%= link_to "retour", restaurants_path %>
 <% end %>
+
+
+
+
+
+
+
+
 
