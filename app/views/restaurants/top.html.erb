@@ -1,5 +1,5 @@
-<h1>ALL RESTAURANTS</h1>
-
+<%= link_to "HOME PAGE", root_path %>
+<h1>BEST RESTAURANTS</h1>
 <ul>
   <% @restaurants.each do |restaurant| %>
   <li>
@@ -8,7 +8,3 @@
   </li>
   <% end %>
 </ul>
-
-<%= link_to "Creer un resto", new_restaurant_path %>
-<br>
-<%= link_to "ALLER BEST RESTO", top_restaurants_path %>

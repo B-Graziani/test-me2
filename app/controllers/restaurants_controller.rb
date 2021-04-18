@@ -5,6 +5,12 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   end
+  def chef_name
+    @restaurant = Restaurant.find(params[:id])
+  end
+  def top
+    @restaurants = Restaurant.where(stars: 5)
+  end
   def new
     @restaurant = Restaurant.new
   end
@@ -33,6 +39,6 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address)
+    params.require(:restaurant).permit(:name, :address, :chef_name, :stars)
   end
 end
