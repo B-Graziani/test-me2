@@ -4,9 +4,14 @@
   <% @restaurants.each do |restaurant| %>
   <li>
     <%= restaurant.name %>
+    <%= restaurant.user_id %>
     <%= link_to "show", restaurant %>
-    <%= link_to "edit", edit_restaurant_path(restaurant) %>
-    <%= link_to "delete", restaurant, method: :delete, data: { confirm: "are you sure?"} %>
+    <% if policy(restaurant).edit? %>
+      <%= link_to "edit", edit_restaurant_path(restaurant) %>
+    <% end %>
+    <% if policy(restaurant).destroy? %>
+      <%= link_to "delete", restaurant, method: :delete, data: { confirm: "are you sure?"} %>
+    <% end %>
   </li>
   <% end %>
 </ul>
