@@ -1,0 +1,7 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<%= link_to "modifier resto", edit_restaurant_path(@restaurant) %>
+<br>
+<%= link_to "supprimer resto", restaurant_path, method: :delete, data: { confirm: "are you sure?"} %>
+<br>
+<%= link_to "retour", restaurants_path %>
