@@ -5,6 +5,8 @@
   <li>
     <%= restaurant.name %>
     <%= link_to "show", restaurant %>
+    <%= link_to "edit", edit_restaurant_path(restaurant) %>
+    <%= link_to "delete", restaurant, method: :delete, data: { confirm: "are you sure?"} %>
   </li>
   <% end %>
 </ul>
