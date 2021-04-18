@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'restaurants#index'
   resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
