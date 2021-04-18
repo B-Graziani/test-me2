@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "cleaning DB"
+Restaurant.destroy_all
+puts "creating DB"
+resto1 = { name: "Mcdo", address: "place de clichy"}
+resto2 = { name: "Kfc", address: "Avenue de clichy"}
+resto3 = { name: "Subway", address: "Chateau de clichy"}
+Restaurants = []
+[resto1, resto2, resto3].each_with_index do |attributes, index|
+restaurant = Restaurant.create!(attributes)
+Restaurants << restaurant
+end
